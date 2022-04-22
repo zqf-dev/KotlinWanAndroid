@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/me_srf"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/me_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_200"
+                android:background="@color/new_primary"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_20">
+
+                <ImageView
+                    android:id="@+id/me_hportrait_iv"
+                    android:layout_width="@dimen/dimen_80"
+                    android:layout_height="@dimen/dimen_80"
+                    android:background="@drawable/headportrait_img_bg"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/icon_profile" />
+
+                <TextView
+                    android:id="@+id/me_nickname_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:text="请先登录"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/me_recycle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+</layout>

@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.KotlinWanAndroid" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/new_primary</item>
+        <item name="colorPrimaryVariant">@color/new_primary</item>
+        <item name="colorOnPrimary">@color/new_primary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="launch_theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/new_primary</item>
+        <item name="colorPrimaryDark">@color/new_primary</item>
+        <item name="colorAccent">@color/new_primary</item>
+        <item name="android:windowBackground">@drawable/launch_drawable</item>
+    </style>
+</resources>

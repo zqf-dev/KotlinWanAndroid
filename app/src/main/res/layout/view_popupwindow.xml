@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/pop_window_dialog_background"
+    android:maxWidth="200dp"
+    android:minWidth="100dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_pop_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pw_tv_bg"
+        android:gravity="center"
+        android:paddingLeft="18dp"
+        android:paddingTop="12dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1"
+        android:background="@color/gray_depth1" />
+
+    <TextView
+        android:id="@+id/tv_pop_browser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pw_tv_bg"
+        android:gravity="center"
+        android:paddingLeft="18dp"
+        android:paddingTop="12dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1"
+        android:background="@color/gray_depth1" />
+
+    <TextView
+        android:id="@+id/tv_pop_collect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pw_tv_bg"
+        android:gravity="center"
+        android:paddingLeft="18dp"
+        android:paddingTop="12dp"
+        android:paddingRight="18dp"
+        android:paddingBottom="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1"
+        android:background="@color/gray_depth1" />
+</LinearLayout>

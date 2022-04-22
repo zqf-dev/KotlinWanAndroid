@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">KotlinWanAndroid</string>
+    <string name="main_fg_home_str">首页</string>
+    <string name="main_fg_system_str">广场</string>
+    <string name="main_fg_official_str">公众号</string>
+    <string name="main_fg_qa_str">问答</string>
+    <string name="main_fg_me_str">我的</string>
+    <string name="custom_loading_str">努力加载中</string>
+    <string name="share_article_url">【%1$s】分享[%2$s]:%3$s</string>
+    <string name="search_hint_str">输入关键字搜索</string>
+    <string name="cha_str">×</string>
+    <string name="empty_str">清空</string>
+    <string name="search_history_str">搜索历史</string>
+    <string name="hot_search_str">热门搜索</string>
+    <string name="article_top_str">置顶</string>
+    <string name="article_new_str">新</string>
+</resources>
