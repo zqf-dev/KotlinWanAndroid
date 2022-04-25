@@ -25,4 +25,6 @@ Android使用Kotlin开发入门学习实战项目，采用WanAndroid提供的数
 
 #### 项目部分截图
 
-![1](C:\Users\Administrator\Desktop\5.jpg) | ![2](C:\Users\Administrator\Desktop\4.jpg) | ![3](C:\Users\Administrator\Desktop\3.jpg)
+![1](https://github.com/zqf-dev/KotlinWanAndroid/raw/main/image/5.jpg) | ![2](https://github.com/zqf-dev/KotlinWanAndroid/raw/main/image/4.jpg) | ![3](https://github.com/zqf-dev/KotlinWanAndroid/raw/main/image/3.jpg)
+
+![2](https://github.com/zqf-dev/KotlinWanAndroid/raw/main/image/2.jpg) | ![1](https://github.com/zqf-dev/KotlinWanAndroid/raw/main/image/1.jpg)
