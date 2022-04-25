@@ -1,7 +1,7 @@
 # KotlinWanAndroid
 Android使用Kotlin开发入门学习实战项目，采用WanAndroid提供的数据接口（感谢 [鸿洋-玩Android](https://www.wanandroid.com/) 提供的接口）：
 
-项目情况及使用到的框架：
+#### 项目情况及使用到的框架：
 
 1、as 4.2.2 + gradle 6.7.1
 
@@ -23,5 +23,6 @@ Android使用Kotlin开发入门学习实战项目，采用WanAndroid提供的数
 
 10、WebView腾讯[xWebView](https://x5.tencent.com/tbs/technical.html#/)
 
+#### 项目部分截图
 
-
+![1](C:\Users\Administrator\Desktop\5.jpg) | ![2](C:\Users\Administrator\Desktop\4.jpg) | ![3](C:\Users\Administrator\Desktop\3.jpg)
