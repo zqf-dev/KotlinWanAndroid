@@ -26,9 +26,6 @@ Android使用Kotlin开发入门学习实战项目，采用WanAndroid提供的数
 #### 项目部分截图
 
 <figure>
-    <img src="./image/5.jpg" width="240" height="420" style="padding: 10px"/>
-    <img src="./image/3.jpg" width="240" height="420" style="padding: 10px"/>
-    <img src="./image/4.jpg" width="240" height="420" style="padding: 10px"/>
-    <img src="./image/2.jpg" width="240" height="420" style="padding: 10px"/>
-    <img src="./image/1.jpg" width="240" height="420" style="padding: 10px"/>
+    <img src="./image/5.jpg" width="240" height="420" style="padding: 10px"/><img src="./image/3.jpg" width="240" height="420" style="padding: 10px"/><img src="./image/4.jpg" width="240" height="420" style="padding: 10px"/>
+    <img src="./image/2.jpg" width="240" height="420" style="padding: 10px"/><img src="./image/1.jpg" width="240" height="420" style="padding: 10px"/>
 </figure>
