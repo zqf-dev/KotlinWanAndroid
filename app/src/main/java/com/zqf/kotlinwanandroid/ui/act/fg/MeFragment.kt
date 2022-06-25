@@ -5,9 +5,11 @@ import com.zqf.kotlinwanandroid.base.BaseFg
 import com.zqf.kotlinwanandroid.constant.AppConstant
 import com.zqf.kotlinwanandroid.databinding.MefgLayoutBinding
 import com.zqf.kotlinwanandroid.entity.MeRecycleEntity
+import com.zqf.kotlinwanandroid.ui.act.AboutActivity
 import com.zqf.kotlinwanandroid.ui.adapter.MeAdapter
 import com.zqf.kotlinwanandroid.ui.contact.MeFgContact
 import com.zqf.kotlinwanandroid.ui.presenter.MeFgPresenter
+import com.zqf.kotlinwanandroid.util.ActRouter
 import com.zqf.kotlinwanandroid.util.RvUtil
 import kotlinx.android.synthetic.main.mefg_layout.*
 
@@ -36,6 +38,11 @@ class MeFragment : BaseFg<MefgLayoutBinding, MeFgPresenter>(), MeFgContact.MeFgV
         me_srf.setEnableLoadMore(false)
         me_srf.setOnRefreshListener {
             me_srf.finishRefresh()
+        }
+        meAdapter.setOnItemClickListener { adapter, view, position ->
+            if (meAdapter.getItem(position).title == "关于我们") {
+                ActRouter.ofAct(mContext, AboutActivity().javaClass)
+            }
         }
     }
 

@@ -12,13 +12,13 @@ android {
             arg("rxhttp_rxjava", "3.1.1")
         }
     }
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.zqf.kotlinwanandroid"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -37,6 +37,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    //排除原子函数模块并防止出现警告
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
     }
 
     dataBinding {
@@ -97,4 +102,8 @@ dependencies {
     implementation 'com.tencent.tbs:tbssdk:44136'
     //AgentWebView
     //implementation 'com.github.Justson.AgentWeb:agentweb-core:v5.0.0-alpha.1-androidx'
+    //room
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
 }

@@ -24,6 +24,7 @@
         </activity>
         <activity
             android:name=".ui.act.LaunchActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/launch_theme">
             <intent-filter>
@@ -43,6 +44,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.act.SearchDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.act.AboutActivity"
             android:screenOrientation="portrait" />
 
         <service
