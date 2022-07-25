@@ -48,6 +48,9 @@
         <activity
             android:name=".ui.act.AboutActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.act.SysSetActivity"
+            android:screenOrientation="portrait" />
 
         <service
             android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
