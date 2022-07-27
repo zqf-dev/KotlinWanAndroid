@@ -9,7 +9,7 @@ import com.zqf.kotlinwanandroid.ui.presenter.SysSetActPresenter
 /**
  * Author: zqf
  * Date: 2022/07/25
- * 系统设置
+ * 系统设置Activity
  */
 class SysSetActivity : BaseAct<SyssetLayoutBinding, SysSetActPresenter>(),
     SysSetContact.SysSetView {
