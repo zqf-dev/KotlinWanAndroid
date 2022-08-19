@@ -13,14 +13,12 @@
         android:background="@drawable/circle_shape"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/dimen_10"
-        android:paddingTop="@dimen/dimen_20"
-        android:paddingRight="@dimen/dimen_10"
-        android:paddingBottom="@dimen/dimen_10">
+        android:paddingTop="@dimen/dimen_20">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dimen_45"
+            android:gravity="center"
             android:text="提示"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -31,13 +29,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_10"
             android:text="确认退出登录吗?"
-            android:textColor="#524F4F"
+            android:textColor="@color/black"
             android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0_5"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:background="@color/gray_depth2" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_45"
-            android:layout_marginTop="@dimen/dimen_20"
+            android:layout_height="@dimen/dimen_50"
             android:orientation="horizontal">
 
             <TextView
@@ -49,6 +52,11 @@
                 android:text="取消"
                 android:textColor="#747171"
                 android:textSize="17sp" />
+
+            <View
+                android:layout_width="@dimen/dimen_0_5"
+                android:layout_height="match_parent"
+                android:background="@color/gray_depth2" />
 
             <TextView
                 android:id="@+id/sure_btn"

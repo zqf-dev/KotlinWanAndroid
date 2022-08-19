@@ -1,8 +1,7 @@
 package com.zqf.kotlinwanandroid.ui.contact
 
-import android.content.Context
 import com.zqf.kotlinwanandroid.base.IBaseView
-import com.zqf.kotlinwanandroid.entity.MeRecycleEntity
+import com.zqf.kotlinwanandroid.entity.SysSettingEntity
 
 /**
  * Author: zqf
@@ -11,10 +10,10 @@ import com.zqf.kotlinwanandroid.entity.MeRecycleEntity
 interface SysSetContact {
 
     interface SysSetView : IBaseView {
-        fun meRecycleData(meRecycleEntity: MutableList<String>)
+        fun meRecycleData(meRecycleEntity: MutableList<SysSettingEntity>)
     }
 
     interface Presenter {
-
+        fun getSysInitData()
     }
 }

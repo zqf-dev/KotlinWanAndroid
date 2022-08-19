@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_8">
+
+    <TextView
+        android:id="@+id/sys_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:text="无图模式" />
+
+    <TextView
+        android:id="@+id/sys_item_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sys_item_title"
+        android:layout_marginTop="@dimen/dimen_6"
+        tools:text="开启后....." />
+
+    <TextView
+        android:id="@+id/sys_item_right_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/sys_item_right_iv"
+        tools:text="首页" />
+
+    <ImageView
+        android:id="@+id/sys_item_right_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@null"
+        android:src="@mipmap/right" />
+
+</RelativeLayout>
