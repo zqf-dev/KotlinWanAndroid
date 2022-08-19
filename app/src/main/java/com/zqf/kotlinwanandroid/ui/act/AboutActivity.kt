@@ -1,7 +1,5 @@
 package com.zqf.kotlinwanandroid.ui.act
 
-import android.annotation.SuppressLint
-import com.bumptech.glide.util.Util
 import com.zqf.kotlinwanandroid.R
 import com.zqf.kotlinwanandroid.base.BaseAct
 import com.zqf.kotlinwanandroid.databinding.AboutLayoutBinding
@@ -9,11 +7,9 @@ import com.zqf.kotlinwanandroid.entity.MeRecycleEntity
 import com.zqf.kotlinwanandroid.ui.adapter.MeAdapter
 import com.zqf.kotlinwanandroid.ui.contact.AboutContact
 import com.zqf.kotlinwanandroid.ui.presenter.AboutActPresenter
-import com.zqf.kotlinwanandroid.util.ActRouter
 import com.zqf.kotlinwanandroid.util.AppUtils
 import com.zqf.kotlinwanandroid.util.RvUtil
 import kotlinx.android.synthetic.main.about_layout.*
-import kotlinx.android.synthetic.main.mefg_layout.*
 
 /**
  * Author: zqf

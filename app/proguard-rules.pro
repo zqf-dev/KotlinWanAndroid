@@ -30,3 +30,6 @@
 -keep class com.tencent.tbs.** {
     *;
 }
+#BasePopup
+-dontwarn razerdp.basepopup.**
+-keep class razerdp.basepopup.**{*;}

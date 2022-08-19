@@ -1,10 +1,7 @@
 package com.zqf.kotlinwanandroid.ui.adapter
 
-import android.content.Context
 import android.graphics.Color
-import android.graphics.Color.green
 import android.text.TextUtils
-import android.util.Log
 import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder

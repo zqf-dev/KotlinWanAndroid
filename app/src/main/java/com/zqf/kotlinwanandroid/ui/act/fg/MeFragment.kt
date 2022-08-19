@@ -1,5 +1,7 @@
 package com.zqf.kotlinwanandroid.ui.act.fg
 
+import android.widget.Button
+import android.widget.TextView
 import com.zqf.kotlinwanandroid.R
 import com.zqf.kotlinwanandroid.base.BaseFg
 import com.zqf.kotlinwanandroid.constant.AppConstant
@@ -12,6 +14,7 @@ import com.zqf.kotlinwanandroid.ui.contact.MeFgContact
 import com.zqf.kotlinwanandroid.ui.presenter.MeFgPresenter
 import com.zqf.kotlinwanandroid.util.ActRouter
 import com.zqf.kotlinwanandroid.util.RvUtil
+import com.zqf.kotlinwanandroid.widget.OutLoginPopup
 import kotlinx.android.synthetic.main.mefg_layout.*
 
 /**
@@ -44,6 +47,14 @@ class MeFragment : BaseFg<MefgLayoutBinding, MeFgPresenter>(), MeFgContact.MeFgV
             when (meAdapter.getItem(position).title) {
                 "关于我们" -> ActRouter.ofAct(mContext, AboutActivity().javaClass)
                 "系统设置" -> ActRouter.ofAct(mContext, SysSetActivity().javaClass)
+                "退出登录" -> {
+                    val out = OutLoginPopup(mContext)
+                    out.findViewById<TextView>(R.id.sure_btn)
+                        .setOnClickListener {
+                            out.dismiss()
+                        }
+                    out.showPopupWindow()
+                }
             }
         }
     }
