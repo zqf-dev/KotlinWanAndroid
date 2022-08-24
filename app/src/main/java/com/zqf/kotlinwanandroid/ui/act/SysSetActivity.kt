@@ -1,5 +1,7 @@
 package com.zqf.kotlinwanandroid.ui.act
 
+import android.util.Log
+import android.widget.Switch
 import com.zqf.kotlinwanandroid.R
 import com.zqf.kotlinwanandroid.base.BaseAct
 import com.zqf.kotlinwanandroid.databinding.SyssetLayoutBinding
@@ -41,6 +43,10 @@ class SysSetActivity : BaseAct<SyssetLayoutBinding, SysSetActPresenter>(),
             when (mAdapter.getItem(position).title) {
                 "关于我们" -> ActRouter.ofAct(mContext, AboutActivity().javaClass)
             }
+        }
+        mAdapter.addChildClickViewIds(R.id.sys_item_switch)
+        mAdapter.setOnItemChildClickListener { adapter, view, position ->
+
         }
     }
 
