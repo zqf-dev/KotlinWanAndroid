@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.annotation.RequiresApi
 import com.zqf.kotlinwanandroid.entity.SysTabTreeEntity
+import com.zqf.kotlinwanandroid.ui.act.LoginActivity
 import com.zqf.kotlinwanandroid.ui.web.WebViewX5Activity
 
 /**
@@ -49,6 +50,13 @@ class ActRouter {
             val intent = Intent(packageContext, WebViewX5Activity::class.java)
             intent.putExtra("linkUrl", linkUrl)
             intent.putExtra("linkUrlTitle", linkUrlTitle)
+            packageContext.startActivity(intent)
+        }
+
+        //统一跳转至登录
+        fun ofLoginAct(packageContext: Context) {
+            val intent = Intent(packageContext, LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             packageContext.startActivity(intent)
         }
     }
