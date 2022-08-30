@@ -35,7 +35,7 @@ class AboutActivity : BaseAct<AboutLayoutBinding, AboutActPresenter>(), AboutCon
         mPresenter.getAboutRecycleData()
         about_recycle.layoutManager = RvUtil.vertical(mContext)
         about_recycle.adapter = meAdapter
-        meAdapter.setOnItemClickListener { adapter, view, position ->
+        meAdapter.setOnItemClickListener { _, _, position ->
             when (position) {
                 0 -> mPresenter.webRout(mContext, "https://www.wanandroid.com")
                 1 -> mPresenter.webRout(mContext, "https://github.com/zqf-dev/KotlinWanAndroid")

@@ -3,7 +3,6 @@ package com.zqf.kotlinwanandroid.ui.act
 import android.view.KeyEvent
 import android.view.MenuItem
 import android.view.View
-import android.view.View.OnLongClickListener
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
@@ -23,7 +22,7 @@ import com.zqf.kotlinwanandroid.widget.NoDoubleClickListener
 
 class MainActivity : BaseAct<ActivityMainBinding, MainActivityPresenter>(), MainContact.MainView {
 
-    lateinit var navController: NavController
+    private lateinit var navController: NavController
     lateinit var mainBnv: BottomNavigationView
     private var exitTime: Long = 0
 
@@ -66,16 +65,14 @@ class MainActivity : BaseAct<ActivityMainBinding, MainActivityPresenter>(), Main
     }
 
     private fun cancelLongClick() {
-        mainBnv.getChildAt(0).findViewById<View>(R.id.navigation_home).setOnLongClickListener(
-            OnLongClickListener { v: View? -> true })
-        mainBnv.getChildAt(0).findViewById<View>(R.id.navigation_system).setOnLongClickListener(
-            OnLongClickListener { v: View? -> true })
-        mainBnv.getChildAt(0).findViewById<View>(R.id.navigation_official).setOnLongClickListener(
-            OnLongClickListener { v: View? -> true })
-        mainBnv.getChildAt(0).findViewById<View>(R.id.navigation_qa).setOnLongClickListener(
-            OnLongClickListener { v: View? -> true })
-        mainBnv.getChildAt(0).findViewById<View>(R.id.navigation_me).setOnLongClickListener(
-            OnLongClickListener { v: View? -> true })
+        mainBnv.getChildAt(0).findViewById<View>(R.id.navigation_home)
+            .setOnLongClickListener { true }
+        mainBnv.getChildAt(0).findViewById<View>(R.id.navigation_system)
+            .setOnLongClickListener { true }
+        mainBnv.getChildAt(0).findViewById<View>(R.id.navigation_official)
+            .setOnLongClickListener { true }
+        mainBnv.getChildAt(0).findViewById<View>(R.id.navigation_qa).setOnLongClickListener { true }
+        mainBnv.getChildAt(0).findViewById<View>(R.id.navigation_me).setOnLongClickListener { true }
         mTitleBar.setRightIvClickListener(object : NoDoubleClickListener() {
             override fun onNoDoubleClick(view: View?) {
                 if (mainBnv.selectedItemId == R.id.navigation_me) {
@@ -97,27 +94,27 @@ class MainActivity : BaseAct<ActivityMainBinding, MainActivityPresenter>(), Main
         //首页
         val mHomeFgCDestination = fragmentNavigator.createDestination()
         mHomeFgCDestination.id = R.id.navigation_home
-        mHomeFgCDestination.className = HomeFragment::class.java.canonicalName
+        mHomeFgCDestination.className = HomeFragment::class.java.canonicalName!!
         navGraph.addDestination(mHomeFgCDestination)
         //广场
         val mSysCDestination = fragmentNavigator.createDestination()
         mSysCDestination.id = R.id.navigation_system
-        mSysCDestination.className = SystemFragment::class.java.canonicalName
+        mSysCDestination.className = SystemFragment::class.java.canonicalName!!
         navGraph.addDestination(mSysCDestination)
         //公众号
         val mOfficialCDestination = fragmentNavigator.createDestination()
         mOfficialCDestination.id = R.id.navigation_official
-        mOfficialCDestination.className = OfficialFragment::class.java.canonicalName
+        mOfficialCDestination.className = OfficialFragment::class.java.canonicalName!!
         navGraph.addDestination(mOfficialCDestination)
         //问答
         val mQaCD = fragmentNavigator.createDestination()
         mQaCD.id = R.id.navigation_qa
-        mQaCD.className = QaFragment::class.java.canonicalName
+        mQaCD.className = QaFragment::class.java.canonicalName!!
         navGraph.addDestination(mQaCD)
         //我的
         val mMeCDestination = fragmentNavigator.createDestination()
         mMeCDestination.id = R.id.navigation_me
-        mMeCDestination.className = MeFragment::class.java.canonicalName
+        mMeCDestination.className = MeFragment::class.java.canonicalName!!
         navGraph.addDestination(mMeCDestination)
         navGraph.startDestination = R.id.navigation_home
         return navGraph
