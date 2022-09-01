@@ -14,4 +14,9 @@
     <string name="hot_search_str">热门搜索</string>
     <string name="article_top_str">置顶</string>
     <string name="article_new_str">新</string>
+    <string name="login_ac_str">请输入账号</string>
+    <string name="login_psd_str">请输入密码</string>
+    <string name="login_btn_str">登录</string>
+    <string name="go_register_str">没有账号？去注册</string>
+    <string name="login_top_tip_str">欢迎使用玩Android\n&#160;&#160;&#160;一起来做个App吧</string>
 </resources>

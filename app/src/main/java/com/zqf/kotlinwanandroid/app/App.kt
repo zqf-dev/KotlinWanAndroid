@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.util.Log
 import androidx.multidex.MultiDex
+import com.hjq.toast.ToastUtils
 import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
@@ -13,7 +14,13 @@ import com.scwang.smart.refresh.layout.listener.DefaultRefreshHeaderCreator
 import com.tencent.smtt.export.external.TbsCoreSettings
 import com.tencent.smtt.sdk.QbSdk
 import com.zqf.kotlinwanandroid.R
+import okhttp3.OkHttpClient
 import rxhttp.RxHttpPlugins
+import rxhttp.wrapper.cookie.CookieStore
+import rxhttp.wrapper.ssl.HttpsUtils
+import java.util.concurrent.TimeUnit
+import javax.net.ssl.HostnameVerifier
+import javax.net.ssl.SSLSession
 
 
 /**
@@ -34,6 +41,7 @@ class App : Application() {
         instance = this
         netHttpConfig()
         initX5WebView()
+        initOther()
     }
 
     private fun initX5WebView() {
@@ -56,7 +64,23 @@ class App : Application() {
     }
 
     private fun netHttpConfig() {
-        RxHttpPlugins.init(RxHttpPlugins.getOkHttpClient()).setDebug(true);
+        //默认的配置
+        //RxHttpPlugins.init(RxHttpPlugins.getOkHttpClient()).setDebug(true)
+        //自定义配置
+        val sslParams = HttpsUtils.getSslSocketFactory()
+        val client = OkHttpClient.Builder()
+            .cookieJar(CookieStore())
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(10, TimeUnit.SECONDS)
+            .writeTimeout(10, TimeUnit.SECONDS)
+            .sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
+            .hostnameVerifier { _, _ -> true }
+            .build()
+        RxHttpPlugins.init(client)
+    }
+
+    private fun initOther() {
+        ToastUtils.init(this);
     }
 
     //静态代码块

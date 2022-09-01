@@ -53,4 +53,7 @@ object API {
         return "/article/query/${page}/json"
     }
 
+    //登录
+    const val login = "/user/login"
+
 }
