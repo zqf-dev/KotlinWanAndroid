@@ -18,11 +18,8 @@ object LoginInterceptChain {
     //默认初始化Login的拦截器
     private val loginIntercept = LoginInterceptor()
 
-    // 执行拦截器。
+    // 执行拦截器
     fun process() {
-        Log.e("TAG", "当前的index---$index")
-        Log.e("TAG", "ArrayList的indices---" + interceptors.indices)
-        Log.e("TAG", "ArrayList的size---" + interceptors.size)
         if (interceptors.isEmpty()) return
         when (index) {
             in interceptors.indices -> {

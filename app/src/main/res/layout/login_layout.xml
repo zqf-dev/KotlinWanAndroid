@@ -28,9 +28,10 @@
                 android:id="@+id/login_ac_ed"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_50"
-                android:background="@null"
+                android:background="@drawable/login_ed_bg"
                 android:hint="@string/login_ac_str"
                 android:inputType="text"
+                android:paddingStart="@dimen/dimen_10"
                 android:textSize="15sp"
                 tools:ignore="TextFields" />
 
@@ -38,19 +39,34 @@
                 android:id="@+id/login_psd_ed"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_50"
-                android:layout_marginTop="@dimen/dimen_20"
-                android:background="@null"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@drawable/login_ed_bg"
                 android:hint="@string/login_psd_str"
                 android:inputType="textPassword"
+                android:paddingStart="@dimen/dimen_10"
                 android:textSize="15sp"
                 tools:ignore="TextFields" />
+
+            <EditText
+                android:id="@+id/login_rpsd_ed"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@drawable/login_ed_bg"
+                android:hint="@string/login_rpsd_str"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/dimen_10"
+                android:textSize="15sp"
+                android:visibility="gone"
+                tools:ignore="TextFields" />
+
         </LinearLayout>
 
         <Button
             android:id="@+id/login_btn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_50"
-            android:layout_marginTop="@dimen/dimen_50"
+            android:layout_marginTop="@dimen/dimen_30"
             android:background="@drawable/login_btn_draw"
             android:text="@string/login_btn_str"
             android:textColor="@color/white"
@@ -59,11 +75,13 @@
         <TextView
             android:id="@+id/register_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dimen_50"
             android:layout_gravity="end"
-            android:layout_marginTop="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:gravity="center"
             android:text="@string/go_register_str"
-            android:textColor="@color/new_primary" />
+            android:textColor="@color/new_primary"
+            android:textSize="15sp" />
     </LinearLayout>
 
 </layout>

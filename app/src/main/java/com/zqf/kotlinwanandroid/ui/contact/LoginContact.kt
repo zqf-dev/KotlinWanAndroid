@@ -9,10 +9,12 @@ import com.zqf.kotlinwanandroid.base.IBaseView
 interface LoginContact {
 
     interface ILoginView : IBaseView {
-
+        fun loginsuc()
+        fun registsuc()
     }
 
     interface Presenter {
-
+        //登录、注册
+        fun loginServer(vT: Int, ac: String, psd: String, repsd: String)
     }
 }

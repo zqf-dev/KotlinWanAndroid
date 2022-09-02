@@ -76,7 +76,7 @@ class App : Application() {
             .sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
             .hostnameVerifier { _, _ -> true }
             .build()
-        RxHttpPlugins.init(client)
+        RxHttpPlugins.init(client).setDebug(true)
     }
 
     private fun initOther() {

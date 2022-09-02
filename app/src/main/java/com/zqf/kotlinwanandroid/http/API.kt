@@ -56,4 +56,7 @@ object API {
     //登录
     const val login = "/user/login"
 
+    //注册
+    const val register = "/user/register"
+
 }
