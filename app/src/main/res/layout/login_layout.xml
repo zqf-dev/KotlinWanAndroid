@@ -21,14 +21,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_40"
-            android:layout_marginEnd="@dimen/dimen_50"
             android:orientation="vertical">
 
             <EditText
                 android:id="@+id/login_ac_ed"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_50"
-                android:background="@drawable/login_ed_bg"
                 android:hint="@string/login_ac_str"
                 android:inputType="text"
                 android:paddingStart="@dimen/dimen_10"
@@ -40,7 +38,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_50"
                 android:layout_marginTop="@dimen/dimen_15"
-                android:background="@drawable/login_ed_bg"
                 android:hint="@string/login_psd_str"
                 android:inputType="textPassword"
                 android:paddingStart="@dimen/dimen_10"

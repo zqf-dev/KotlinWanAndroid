@@ -1,5 +1,6 @@
 package com.zqf.kotlinwanandroid.ui.act.fg
 
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import com.zqf.kotlinwanandroid.R
@@ -7,6 +8,8 @@ import com.zqf.kotlinwanandroid.base.BaseFg
 import com.zqf.kotlinwanandroid.constant.AppConstant
 import com.zqf.kotlinwanandroid.databinding.MefgLayoutBinding
 import com.zqf.kotlinwanandroid.entity.MeRecycleEntity
+import com.zqf.kotlinwanandroid.interceptor.LoginInterceptChain
+import com.zqf.kotlinwanandroid.interceptor.LoginNextInterceptor
 import com.zqf.kotlinwanandroid.ui.act.AboutActivity
 import com.zqf.kotlinwanandroid.ui.act.SysSetActivity
 import com.zqf.kotlinwanandroid.ui.adapter.MeAdapter
@@ -42,6 +45,13 @@ class MeFragment : BaseFg<MefgLayoutBinding, MeFgPresenter>(), MeFgContact.MeFgV
         me_srf.setEnableLoadMore(false)
         me_srf.setOnRefreshListener {
             me_srf.finishRefresh()
+        }
+        me_hportrait_iv.setOnClickListener {
+            LoginInterceptChain.addInterceptor(LoginNextInterceptor {
+                //登录成功的执行收藏
+                //...
+                Log.e("TAG", "刷新用户中心数据")
+            }).process()
         }
         meAdapter.setOnItemClickListener { adapter, view, position ->
             when (meAdapter.getItem(position).title) {

@@ -67,7 +67,6 @@ class HomeFragment : BaseFg<HomefgLayoutBinding, HomeFgPresenter>(), HomeFgConta
             )
         }
         homeRvAdapter.setOnItemChildClickListener { adapter, view, position ->
-            Log.e("TAG", "执行了。。。")
             LoginInterceptChain.addInterceptor(LoginNextInterceptor {
                 //登录成功的执行收藏
                 //...
