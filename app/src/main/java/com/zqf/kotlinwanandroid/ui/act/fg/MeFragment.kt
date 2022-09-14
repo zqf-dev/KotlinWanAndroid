@@ -1,7 +1,5 @@
 package com.zqf.kotlinwanandroid.ui.act.fg
 
-import android.util.Log
-import android.widget.Button
 import android.widget.TextView
 import com.hjq.toast.ToastUtils
 import com.zqf.kotlinwanandroid.R
@@ -9,6 +7,7 @@ import com.zqf.kotlinwanandroid.base.BaseFg
 import com.zqf.kotlinwanandroid.constant.AppConstant
 import com.zqf.kotlinwanandroid.databinding.MefgLayoutBinding
 import com.zqf.kotlinwanandroid.entity.MeRecycleEntity
+import com.zqf.kotlinwanandroid.entity.PersonInfoEntity
 import com.zqf.kotlinwanandroid.interceptor.LoginInterceptChain
 import com.zqf.kotlinwanandroid.interceptor.LoginNextInterceptor
 import com.zqf.kotlinwanandroid.ui.act.AboutActivity
@@ -50,9 +49,7 @@ class MeFragment : BaseFg<MefgLayoutBinding, MeFgPresenter>(), MeFgContact.MeFgV
         }
         me_hportrait_iv.setOnClickListener {
             LoginInterceptChain.addInterceptor(LoginNextInterceptor {
-                //登录成功的执行收藏
-                //...
-                Log.e("TAG", "刷新用户中心数据")
+                mPresenter.getPersonInfo()
             }).process()
         }
         meAdapter.setOnItemClickListener { adapter, view, position ->
@@ -61,7 +58,7 @@ class MeFragment : BaseFg<MefgLayoutBinding, MeFgPresenter>(), MeFgContact.MeFgV
                 "系统设置" -> ActRouter.ofAct(mContext, SysSetActivity().javaClass)
                 "退出登录" -> {
                     if (!KVUtil.decode(AppConstant.isLogin, false)) {
-                        ToastUtils.show("当前未登录")
+                        ToastUtils.show("当前还未登录!")
                     } else {
                         val out = OutLoginPopup(mContext)
                         out.findViewById<TextView>(R.id.sure_btn)
@@ -74,15 +71,20 @@ class MeFragment : BaseFg<MefgLayoutBinding, MeFgPresenter>(), MeFgContact.MeFgV
                 }
             }
         }
+        if (KVUtil.decode(AppConstant.isLogin, false)) {
+            mPresenter.getPersonInfo()
+        }
     }
 
     override fun meRecycleData(meRecycleEntity: MutableList<MeRecycleEntity>) {
         meAdapter.setList(meRecycleEntity)
     }
 
-    //退出成功
     override fun outsuc() {
         KVUtil.encode(AppConstant.isLogin, false)
-        Log.e("TAG", "退出成功")
+    }
+
+    override fun personInfo(info: PersonInfoEntity) {
+        me_nickname_tv.text = info.userInfo.nickname
     }
 }

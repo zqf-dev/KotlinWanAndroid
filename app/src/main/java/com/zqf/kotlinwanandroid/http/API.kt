@@ -62,4 +62,7 @@ object API {
     //退出登录
     const val outLogin = "/user/logout/json"
 
+    //个人信息接口
+    const val personInfo = "/user/lg/userinfo/json"
+
 }

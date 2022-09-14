@@ -1,9 +1,11 @@
 package com.zqf.kotlinwanandroid.ui.presenter
 
+import android.util.Log
 import com.hjq.toast.ToastUtils
 import com.zqf.kotlinwanandroid.R
 import com.zqf.kotlinwanandroid.base.BasePresenter
 import com.zqf.kotlinwanandroid.entity.MeRecycleEntity
+import com.zqf.kotlinwanandroid.entity.PersonInfoEntity
 import com.zqf.kotlinwanandroid.http.API
 import com.zqf.kotlinwanandroid.ui.contact.HomeFgContact
 import com.zqf.kotlinwanandroid.ui.contact.MeFgContact
@@ -52,6 +54,23 @@ class MeFgPresenter(v: MeFgContact.MeFgView) : BasePresenter<MeFgContact.MeFgVie
                     getView()!!.outsuc()
                 }.onFailure {
                     ToastUtils.show(it.message)
+                }
+        }
+    }
+
+    /**
+     * 刷新个人中心
+     */
+    override fun getPersonInfo() {
+        mCoroutineScope.launch {
+            RxHttp.get(API.personInfo)
+                .toResponse<PersonInfoEntity>()
+                .awaitResult {
+                    getView()!!.personInfo(it)
+                }.onFailure {
+                    if (!it.message!!.contains("登录")) {
+                        ToastUtils.show(it.message)
+                    }
                 }
         }
     }
