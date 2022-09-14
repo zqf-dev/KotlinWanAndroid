@@ -1,12 +1,18 @@
 package com.zqf.kotlinwanandroid.ui.presenter
 
+import com.hjq.toast.ToastUtils
 import com.zqf.kotlinwanandroid.R
 import com.zqf.kotlinwanandroid.base.BasePresenter
 import com.zqf.kotlinwanandroid.entity.MeRecycleEntity
+import com.zqf.kotlinwanandroid.http.API
 import com.zqf.kotlinwanandroid.ui.contact.HomeFgContact
 import com.zqf.kotlinwanandroid.ui.contact.MeFgContact
 import com.zqf.kotlinwanandroid.ui.contact.SystemFgContact
 import kotlinx.coroutines.launch
+import rxhttp.RxHttp
+import rxhttp.await
+import rxhttp.awaitResult
+import rxhttp.toResponse
 
 /**
  * Author: zqf
@@ -35,6 +41,18 @@ class MeFgPresenter(v: MeFgContact.MeFgView) : BasePresenter<MeFgContact.MeFgVie
             meList.add(MeRecycleEntity(R.mipmap.about, "关于我们"))
             meList.add(MeRecycleEntity(R.mipmap.logout, "退出登录"))
             getView()!!.meRecycleData(meList)
+        }
+    }
+
+    override fun outLogin() {
+        mCoroutineScope.launch {
+            RxHttp.get(API.outLogin)
+                .toResponse<String>()
+                .awaitResult {
+                    getView()!!.outsuc()
+                }.onFailure {
+                    ToastUtils.show(it.message)
+                }
         }
     }
 }

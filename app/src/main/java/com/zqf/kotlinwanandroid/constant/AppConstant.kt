@@ -47,5 +47,6 @@ object AppConstant {
     //阅读历史最大存储数
     const val READ_RECORD_MAX_COUNT = 1000
 
-    var isLogin = false
+    // mmkv key
+    const val isLogin = "is_login_key"
 }

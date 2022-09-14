@@ -4,6 +4,7 @@ import android.util.Log
 import com.zqf.kotlinwanandroid.app.App
 import com.zqf.kotlinwanandroid.constant.AppConstant
 import com.zqf.kotlinwanandroid.util.ActRouter
+import com.zqf.kotlinwanandroid.util.KVUtil
 
 /**
  * Author: zqf
@@ -13,7 +14,7 @@ class LoginInterceptor : LoginInterceptImpl() {
 
     override fun intercept(chain: LoginInterceptChain) {
         super.intercept(chain)
-        if (AppConstant.isLogin) {
+        if (KVUtil.decode(AppConstant.isLogin, false)) {
             //如果已经登录 -> 放行, 转交给下一个拦截器
             LoginInterceptChain.process()
         } else {

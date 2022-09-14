@@ -3,6 +3,7 @@ package com.zqf.kotlinwanandroid.ui.act.fg
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import com.hjq.toast.ToastUtils
 import com.zqf.kotlinwanandroid.R
 import com.zqf.kotlinwanandroid.base.BaseFg
 import com.zqf.kotlinwanandroid.constant.AppConstant
@@ -16,6 +17,7 @@ import com.zqf.kotlinwanandroid.ui.adapter.MeAdapter
 import com.zqf.kotlinwanandroid.ui.contact.MeFgContact
 import com.zqf.kotlinwanandroid.ui.presenter.MeFgPresenter
 import com.zqf.kotlinwanandroid.util.ActRouter
+import com.zqf.kotlinwanandroid.util.KVUtil
 import com.zqf.kotlinwanandroid.util.RvUtil
 import com.zqf.kotlinwanandroid.widget.OutLoginPopup
 import kotlinx.android.synthetic.main.mefg_layout.*
@@ -58,12 +60,17 @@ class MeFragment : BaseFg<MefgLayoutBinding, MeFgPresenter>(), MeFgContact.MeFgV
                 "关于我们" -> ActRouter.ofAct(mContext, AboutActivity().javaClass)
                 "系统设置" -> ActRouter.ofAct(mContext, SysSetActivity().javaClass)
                 "退出登录" -> {
-                    val out = OutLoginPopup(mContext)
-                    out.findViewById<TextView>(R.id.sure_btn)
-                        .setOnClickListener {
-                            out.dismiss()
-                        }
-                    out.showPopupWindow()
+                    if (!KVUtil.decode(AppConstant.isLogin, false)) {
+                        ToastUtils.show("当前未登录")
+                    } else {
+                        val out = OutLoginPopup(mContext)
+                        out.findViewById<TextView>(R.id.sure_btn)
+                            .setOnClickListener {
+                                out.dismiss()
+                                mPresenter.outLogin()
+                            }
+                        out.showPopupWindow()
+                    }
                 }
             }
         }
@@ -71,5 +78,11 @@ class MeFragment : BaseFg<MefgLayoutBinding, MeFgPresenter>(), MeFgContact.MeFgV
 
     override fun meRecycleData(meRecycleEntity: MutableList<MeRecycleEntity>) {
         meAdapter.setList(meRecycleEntity)
+    }
+
+    //退出成功
+    override fun outsuc() {
+        KVUtil.encode(AppConstant.isLogin, false)
+        Log.e("TAG", "退出成功")
     }
 }

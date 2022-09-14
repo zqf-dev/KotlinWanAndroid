@@ -9,6 +9,7 @@ import com.zqf.kotlinwanandroid.databinding.LoginLayoutBinding
 import com.zqf.kotlinwanandroid.interceptor.LoginInterceptChain
 import com.zqf.kotlinwanandroid.ui.contact.LoginContact
 import com.zqf.kotlinwanandroid.ui.presenter.LoginPresenter
+import com.zqf.kotlinwanandroid.util.KVUtil
 import kotlinx.android.synthetic.main.login_layout.*
 
 /**
@@ -67,7 +68,7 @@ class LoginActivity : BaseAct<LoginLayoutBinding, LoginPresenter>(), LoginContac
     }
 
     override fun loginsuc() {
-        AppConstant.isLogin = true
+        KVUtil.encode(AppConstant.isLogin, true)
         finish()
     }
 

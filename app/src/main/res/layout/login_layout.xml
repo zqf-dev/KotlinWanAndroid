@@ -49,7 +49,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_50"
                 android:layout_marginTop="@dimen/dimen_15"
-                android:background="@drawable/login_ed_bg"
                 android:hint="@string/login_rpsd_str"
                 android:inputType="textPassword"
                 android:paddingStart="@dimen/dimen_10"

@@ -1,6 +1,7 @@
 package com.zqf.kotlinwanandroid.interceptor
 
 import com.zqf.kotlinwanandroid.constant.AppConstant
+import com.zqf.kotlinwanandroid.util.KVUtil
 
 /**
  * Author: zqf
@@ -11,7 +12,7 @@ class LoginNextInterceptor(private val action: () -> Unit) : LoginInterceptImpl(
 
     override fun intercept(chain: LoginInterceptChain) {
         super.intercept(chain)
-        if (AppConstant.isLogin) {
+        if (KVUtil.decode(AppConstant.isLogin,false)) {
             //如果已经登录执行当前的任务
             action()
         }

@@ -11,6 +11,7 @@ import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshFooterCreator
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshHeaderCreator
+import com.tencent.mmkv.MMKV
 import com.tencent.smtt.export.external.TbsCoreSettings
 import com.tencent.smtt.sdk.QbSdk
 import com.zqf.kotlinwanandroid.R
@@ -80,7 +81,9 @@ class App : Application() {
     }
 
     private fun initOther() {
-        ToastUtils.init(this);
+        ToastUtils.init(this)
+        val rootDir = MMKV.initialize(this)
+        Log.e("Tag", "mmkv root dir: $rootDir")
     }
 
     //静态代码块

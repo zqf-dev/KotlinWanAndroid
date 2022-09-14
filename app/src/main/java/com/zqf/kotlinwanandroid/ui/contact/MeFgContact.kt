@@ -11,9 +11,11 @@ interface MeFgContact {
 
     interface MeFgView : IBaseView {
         fun meRecycleData(meRecycleEntity: MutableList<MeRecycleEntity>)
+        fun outsuc()
     }
 
     interface Presenter {
         fun getMeRecycleData()
+        fun outLogin()
     }
 }

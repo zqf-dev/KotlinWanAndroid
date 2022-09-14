@@ -59,4 +59,7 @@ object API {
     //注册
     const val register = "/user/register"
 
+    //退出登录
+    const val outLogin = "/user/logout/json"
+
 }

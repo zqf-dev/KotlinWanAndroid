@@ -110,4 +110,6 @@ dependencies {
     implementation 'io.github.razerdp:BasePopup:3.2.0'
     //Toast
     implementation 'com.github.getActivity:ToastUtils:10.5'
+    //mmkv
+    implementation 'com.tencent:mmkv:1.2.14'
 }
