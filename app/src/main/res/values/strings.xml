@@ -20,4 +20,5 @@
     <string name="login_btn_str">登录</string>
     <string name="go_register_str">没有账号？去注册</string>
     <string name="login_top_tip_str">欢迎使用玩Android\n&#160;&#160;&#160;一起来做个App吧</string>
+    <string name="me_please_login_str">请先登录</string>
 </resources>

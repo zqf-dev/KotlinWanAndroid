@@ -25,6 +25,11 @@ class KVUtil {
             return kv.decodeString(k, def)
         }
 
+        fun decode(k: String): Boolean {
+            val kv = MMKV.defaultMMKV()
+            return kv.decodeBool(k)
+        }
+
         fun decode(k: String, def: Boolean): Boolean {
             val kv = MMKV.defaultMMKV()
             return kv.decodeBool(k, def)

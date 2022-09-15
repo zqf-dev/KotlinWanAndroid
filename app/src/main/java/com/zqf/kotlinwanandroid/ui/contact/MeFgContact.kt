@@ -12,7 +12,7 @@ interface MeFgContact {
 
     interface MeFgView : IBaseView {
         fun meRecycleData(meRecycleEntity: MutableList<MeRecycleEntity>)
-        fun outsuc()
+        fun outSuccess()
         fun personInfo(info: PersonInfoEntity)
     }
 

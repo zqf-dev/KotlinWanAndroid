@@ -19,9 +19,8 @@ import okhttp3.OkHttpClient
 import rxhttp.RxHttpPlugins
 import rxhttp.wrapper.cookie.CookieStore
 import rxhttp.wrapper.ssl.HttpsUtils
+import java.io.File
 import java.util.concurrent.TimeUnit
-import javax.net.ssl.HostnameVerifier
-import javax.net.ssl.SSLSession
 
 
 /**
@@ -67,10 +66,13 @@ class App : Application() {
     private fun netHttpConfig() {
         //默认的配置
         //RxHttpPlugins.init(RxHttpPlugins.getOkHttpClient()).setDebug(true)
+        //cookie
+        val file = File(this.externalCacheDir, "RxHttpCookie")
+        val cookieStore = CookieStore(file, false)
         //自定义配置
         val sslParams = HttpsUtils.getSslSocketFactory()
         val client = OkHttpClient.Builder()
-            .cookieJar(CookieStore())
+            .cookieJar(cookieStore)
             .connectTimeout(10, TimeUnit.SECONDS)
             .readTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(10, TimeUnit.SECONDS)

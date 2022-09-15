@@ -3,6 +3,7 @@ package com.zqf.kotlinwanandroid.ui.act.fg
 import android.widget.TextView
 import com.hjq.toast.ToastUtils
 import com.zqf.kotlinwanandroid.R
+import com.zqf.kotlinwanandroid.app.App
 import com.zqf.kotlinwanandroid.base.BaseFg
 import com.zqf.kotlinwanandroid.constant.AppConstant
 import com.zqf.kotlinwanandroid.databinding.MefgLayoutBinding
@@ -71,20 +72,31 @@ class MeFragment : BaseFg<MefgLayoutBinding, MeFgPresenter>(), MeFgContact.MeFgV
                 }
             }
         }
-        if (KVUtil.decode(AppConstant.isLogin, false)) {
-            mPresenter.getPersonInfo()
-        }
+        me_nickname_tv.text = getString(R.string.me_please_login_str)
+        if (KVUtil.decode(AppConstant.isLogin, false)) mPresenter.getPersonInfo()
     }
 
     override fun meRecycleData(meRecycleEntity: MutableList<MeRecycleEntity>) {
         meAdapter.setList(meRecycleEntity)
     }
 
-    override fun outsuc() {
+    override fun outSuccess() {
         KVUtil.encode(AppConstant.isLogin, false)
+        loginOutStatus(getString(R.string.me_please_login_str), -1)
     }
 
     override fun personInfo(info: PersonInfoEntity) {
-        me_nickname_tv.text = info.userInfo.nickname
+        loginOutStatus(info.userInfo.nickname, info.coinInfo.coinCount)
+    }
+
+    private fun loginOutStatus(nickname: String, coinCount: Int) {
+        me_nickname_tv.text = nickname
+        val itemData = meAdapter.getItem(0)
+        if (KVUtil.decode(AppConstant.isLogin) && coinCount != -1) {
+            itemData.title = "我的积分（$coinCount）"
+        } else {
+            itemData.title = "我的积分"
+        }
+        meAdapter.setData(0, itemData)
     }
 }
