@@ -1,5 +1,6 @@
 package com.zqf.kotlinwanandroid.ui.act.fg
 
+import android.util.Log
 import com.scwang.smart.refresh.layout.api.RefreshLayout
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener
 import com.zqf.kotlinwanandroid.R
@@ -7,6 +8,8 @@ import com.zqf.kotlinwanandroid.base.BaseFg
 import com.zqf.kotlinwanandroid.constant.AppConstant
 import com.zqf.kotlinwanandroid.databinding.QafgLayoutBinding
 import com.zqf.kotlinwanandroid.entity.QaListEntity
+import com.zqf.kotlinwanandroid.interceptor.LoginInterceptChain
+import com.zqf.kotlinwanandroid.interceptor.LoginNextInterceptor
 import com.zqf.kotlinwanandroid.ui.adapter.QaAdapter
 import com.zqf.kotlinwanandroid.ui.contact.QaFgContact
 import com.zqf.kotlinwanandroid.ui.presenter.QaFgPresenter
@@ -40,12 +43,20 @@ class QaFragment : BaseFg<QafgLayoutBinding, QaFgPresenter>(), QaFgContact.QaFgV
         qa_recycle.adapter = qaAdapter
         qa_srf.setOnRefreshLoadMoreListener(this)
         mPresenter.getQaListData(AppConstant.refresh)
+        qaAdapter.addChildClickViewIds(R.id.qa_rv_item_collect_iv)
         qaAdapter.setOnItemClickListener { adapter, view, position ->
             ActRouter.ofWebViewX5Act(
                 mContext,
                 qaAdapter.getItem(position).link,
                 qaAdapter.getItem(position).title
             )
+        }
+        qaAdapter.setOnItemChildClickListener { adapter, view, position ->
+            LoginInterceptChain.addInterceptor(LoginNextInterceptor {
+                //登录成功的执行收藏
+                //...
+                Log.e("TAG", "收藏成功")
+            }).process()
         }
     }
 

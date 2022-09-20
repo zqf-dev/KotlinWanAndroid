@@ -3,7 +3,7 @@
     android:id="@+id/tv_test_content"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dimen_5"
+    android:layout_margin="@dimen/dimen_10"
     android:background="@drawable/flow_item_tv_bg"
     android:gravity="center"
     android:paddingLeft="@dimen/dimen_8"

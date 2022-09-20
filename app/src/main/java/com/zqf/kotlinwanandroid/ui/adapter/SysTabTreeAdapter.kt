@@ -1,5 +1,6 @@
 package com.zqf.kotlinwanandroid.ui.adapter
 
+import android.graphics.Color
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -12,6 +13,7 @@ import com.zqf.kotlinwanandroid.R
 import com.zqf.kotlinwanandroid.entity.SysTabTreeEntity
 import com.zqf.kotlinwanandroid.ui.act.fg.SystemDetails
 import com.zqf.kotlinwanandroid.util.ActRouter
+import com.zqf.kotlinwanandroid.util.CommTools
 
 
 /**
@@ -45,6 +47,7 @@ class SysTabTreeAdapter(layoutResId: Int) :
         override fun convert(holder: BaseViewHolder, item: SysTabTreeEntity.ChildrenBean) {
             val tv = holder.getView<TextView>(R.id.tv_test_content)
             tv.text = item.name
+            tv.setTextColor(Color.parseColor(CommTools.colorValueNative()))
             val params = tv.layoutParams
             if (params is FlexboxLayoutManager.LayoutParams) {
                 val flexboxLp = tv.layoutParams as FlexboxLayoutManager.LayoutParams

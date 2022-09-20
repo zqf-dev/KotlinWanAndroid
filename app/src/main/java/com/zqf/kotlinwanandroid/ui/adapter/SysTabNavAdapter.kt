@@ -1,6 +1,9 @@
 package com.zqf.kotlinwanandroid.ui.adapter
 
 import android.content.Intent
+import android.graphics.Color
+import android.widget.TextView
+import androidx.core.graphics.ColorUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
@@ -12,6 +15,7 @@ import com.zqf.kotlinwanandroid.R
 import com.zqf.kotlinwanandroid.entity.SysTabNavEntity
 import com.zqf.kotlinwanandroid.ui.web.WebViewX5Activity
 import com.zqf.kotlinwanandroid.util.ActRouter
+import com.zqf.kotlinwanandroid.util.CommTools
 
 /**
  * Author: zqf
@@ -48,6 +52,7 @@ class SysTabNavAdapter(layoutResId: Int) :
         BaseQuickAdapter<SysTabNavEntity.ArticlesBean, BaseViewHolder>(layoutResId, data) {
         override fun convert(holder: BaseViewHolder, item: SysTabNavEntity.ArticlesBean) {
             holder.setText(R.id.tv_test_content, item.title)
+                .setTextColor(R.id.tv_test_content, Color.parseColor(CommTools.colorValueNative()))
         }
     }
 }

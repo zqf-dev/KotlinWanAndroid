@@ -67,7 +67,7 @@ class App : Application() {
         //默认的配置
         //RxHttpPlugins.init(RxHttpPlugins.getOkHttpClient()).setDebug(true)
         //cookie
-        val file = File(this.externalCacheDir, "RxHttpCookie")
+        val file = File(this.externalCacheDir, "KwaCookie")
         val cookieStore = CookieStore(file, false)
         //自定义配置
         val sslParams = HttpsUtils.getSslSocketFactory()
