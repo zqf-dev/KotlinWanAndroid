@@ -1,5 +1,6 @@
 package com.zqf.kotlinwanandroid.ui.act.fg
 
+import android.widget.TextView
 import com.google.android.material.tabs.TabLayout
 import com.zqf.kotlinwanandroid.R
 import com.zqf.kotlinwanandroid.base.BaseFg

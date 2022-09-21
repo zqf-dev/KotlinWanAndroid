@@ -1,7 +1,5 @@
 package com.zqf.kotlinwanandroid.ui.act
 
-import android.util.Log
-import android.widget.Switch
 import com.zqf.kotlinwanandroid.R
 import com.zqf.kotlinwanandroid.base.BaseAct
 import com.zqf.kotlinwanandroid.databinding.SyssetLayoutBinding
@@ -11,7 +9,6 @@ import com.zqf.kotlinwanandroid.ui.contact.SysSetContact
 import com.zqf.kotlinwanandroid.ui.presenter.SysSetActPresenter
 import com.zqf.kotlinwanandroid.util.ActRouter
 import com.zqf.kotlinwanandroid.util.RvUtil
-import kotlinx.android.synthetic.main.mefg_layout.*
 import kotlinx.android.synthetic.main.sysset_layout.*
 
 /**
