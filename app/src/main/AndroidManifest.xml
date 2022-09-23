@@ -55,6 +55,10 @@
             android:name=".ui.act.LoginActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".ui.act.CollectListAct"
+            android:screenOrientation="portrait" />
+
         <service
             android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
             android:label="dexopt"

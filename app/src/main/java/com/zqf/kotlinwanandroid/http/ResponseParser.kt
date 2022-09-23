@@ -1,5 +1,6 @@
 package com.zqf.kotlinwanandroid.http
 
+import android.util.Log
 import rxhttp.wrapper.annotation.Parser
 import rxhttp.wrapper.exception.ParseException
 import rxhttp.wrapper.parse.TypeParser

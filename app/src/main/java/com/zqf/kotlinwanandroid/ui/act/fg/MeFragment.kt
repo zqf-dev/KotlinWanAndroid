@@ -12,6 +12,7 @@ import com.zqf.kotlinwanandroid.entity.PersonInfoEntity
 import com.zqf.kotlinwanandroid.interceptor.LoginInterceptChain
 import com.zqf.kotlinwanandroid.interceptor.LoginNextInterceptor
 import com.zqf.kotlinwanandroid.ui.act.AboutActivity
+import com.zqf.kotlinwanandroid.ui.act.CollectListAct
 import com.zqf.kotlinwanandroid.ui.act.SysSetActivity
 import com.zqf.kotlinwanandroid.ui.adapter.MeAdapter
 import com.zqf.kotlinwanandroid.ui.contact.MeFgContact
@@ -55,6 +56,7 @@ class MeFragment : BaseFg<MefgLayoutBinding, MeFgPresenter>(), MeFgContact.MeFgV
         }
         meAdapter.setOnItemClickListener { adapter, view, position ->
             when (meAdapter.getItem(position).title) {
+                "我的收藏" -> ActRouter.ofAct(mContext, CollectListAct().javaClass)
                 "关于我们" -> ActRouter.ofAct(mContext, AboutActivity().javaClass)
                 "系统设置" -> ActRouter.ofAct(mContext, SysSetActivity().javaClass)
                 "退出登录" -> {

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/gray"
+    app:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/collect_item_author_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                tools:text="扔物线" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/collect_item_top_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="10sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/collect_item_tag_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="10sp"
+                tools:ignore="HardcodedText"
+                tools:textColor="@color/red" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/collect_item_date_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textSize="11sp"
+                tools:text="2020 - 3 - 25" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/collect_item_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="消失了半年，这个 Android 界的第一骚货又回来了" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_5">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/collect_item_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:lines="1"
+                android:textSize="11sp"
+                tools:text="干货资源" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/collect_item_iv"
+                android:layout_width="@dimen/dimen_35"
+                android:layout_height="@dimen/dimen_35"
+                android:layout_gravity="end"
+                android:padding="@dimen/dimen_5"
+                android:src="@mipmap/like" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

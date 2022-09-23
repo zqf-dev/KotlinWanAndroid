@@ -86,5 +86,10 @@ class HomeArticleAdapter(layoutResId: Int) :
             R.id.home_rv_item_type_tv,
             "分类：" + item.superChapterName + " / " + item.chapterName
         )
+        if (item.isCollect) {
+            holder.setImageResource(R.id.home_rv_item_collect_iv, R.mipmap.like)
+        } else {
+            holder.setImageResource(R.id.home_rv_item_collect_iv, R.mipmap.not_like)
+        }
     }
 }

@@ -10,4 +10,8 @@ class Response<T> {
     val errorCode = 0
     val errorMsg: String = ""
     val data: T? = null
+    override fun toString(): String {
+        return "Response(errorCode=$errorCode, errorMsg='$errorMsg', data=$data)"
+    }
+
 }

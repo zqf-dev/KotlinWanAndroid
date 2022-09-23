@@ -1,11 +1,9 @@
 package com.zqf.kotlinwanandroid.ui.presenter
 
-import android.app.Activity
 import android.content.Context
 import com.zqf.kotlinwanandroid.R
 import com.zqf.kotlinwanandroid.base.BasePresenter
 import com.zqf.kotlinwanandroid.entity.MeRecycleEntity
-import com.zqf.kotlinwanandroid.ui.act.SearchDetailsActivity
 import com.zqf.kotlinwanandroid.ui.contact.AboutContact
 import com.zqf.kotlinwanandroid.util.ActRouter
 import kotlinx.coroutines.launch

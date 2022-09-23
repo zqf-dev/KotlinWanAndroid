@@ -65,4 +65,8 @@ object API {
     //个人信息接口
     const val personInfo = "/user/lg/userinfo/json"
 
+    //收藏列表
+    fun collectList(page: Int): String {
+        return "/lg/collect/list/${page}/json"
+    }
 }
