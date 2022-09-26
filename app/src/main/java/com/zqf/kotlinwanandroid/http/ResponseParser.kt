@@ -1,6 +1,10 @@
 package com.zqf.kotlinwanandroid.http
 
 import android.util.Log
+import com.zqf.kotlinwanandroid.app.App
+import com.zqf.kotlinwanandroid.interceptor.LoginInterceptChain
+import com.zqf.kotlinwanandroid.interceptor.LoginNextInterceptor
+import com.zqf.kotlinwanandroid.util.ActRouter
 import rxhttp.wrapper.annotation.Parser
 import rxhttp.wrapper.exception.ParseException
 import rxhttp.wrapper.parse.TypeParser
@@ -49,6 +53,14 @@ open class ResponseParser<T> : TypeParser<T> {
             @Suppress("UNCHECKED_CAST")
             t = data.errorMsg as T
         }
+        /**
+         * 未登录
+         * if (data.errorCode == -1001) {
+         * ActRouter.ofLoginAct(App.instance.applicationContext)
+         * Log.e("TAG", "登录")
+         * }
+         */
+        //其它
         if (data.errorCode != 0 || t == null) {
             throw ParseException(data.errorCode.toString(), data.errorMsg, response)
         }
