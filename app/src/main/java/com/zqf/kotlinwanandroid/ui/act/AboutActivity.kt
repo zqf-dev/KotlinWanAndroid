@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.about_layout.*
 /**
  * Author: zqf
  * Date: 2022/02/10
+ * 关于页面
  */
 class AboutActivity : BaseAct<AboutLayoutBinding, AboutActPresenter>(), AboutContact.AboutView {
 
