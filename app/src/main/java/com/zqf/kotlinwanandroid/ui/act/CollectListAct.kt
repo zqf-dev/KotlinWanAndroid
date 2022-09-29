@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.collect_list_layout.*
 /**
  * Author: zqf
  * Date: 2022/09/23
+ * 收藏列表
  */
 class CollectListAct : BaseAct<CollectListLayoutBinding, CollectListActPresent>(),
     CollectListContact.ICollectListView, OnRefreshLoadMoreListener {
