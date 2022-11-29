@@ -22,6 +22,6 @@
     <string name="login_top_tip_str">欢迎使用玩Android\n&#160;&#160;&#160;一起来做个App吧</string>
     <string name="me_please_login_str">请先登录</string>
     <string name="me_collect_str">我的收藏</string>
-    <string name="launch_tip_tv_str">玩ANDROID来了</string>
+    <string name="launch_tip_tv_str">玩Android来了</string>
     <string name="launch_bottom_str">https://github.com/zqf-dev</string>
 </resources>
