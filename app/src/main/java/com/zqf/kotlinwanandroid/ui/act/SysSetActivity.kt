@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.sysset_layout.*
 /**
  * Author: zqf
  * Date: 2022/07/25
- * 系统设置Activity kotlin
+ * 系统设置
  */
 class SysSetActivity : BaseAct<SyssetLayoutBinding, SysSetActPresenter>(),
     SysSetContact.SysSetView {
