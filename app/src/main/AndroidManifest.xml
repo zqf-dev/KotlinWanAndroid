@@ -63,6 +63,19 @@
             android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
             android:label="dexopt"
             android:process=":dexopt" />
+        <activity android:name="com.sensorsdata.analytics.android.sdk.dialog.SchemeActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="dsy2544364" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

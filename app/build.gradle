@@ -113,4 +113,7 @@ dependencies {
     implementation 'com.github.getActivity:ToastUtils:10.5'
     //mmkv
     implementation 'com.tencent:mmkv:1.2.14'
+    //埋点sdk
+    implementation files('libs/OnebuyGzAnalyticsSDK-Beta-6.5.1.aar')
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
 }

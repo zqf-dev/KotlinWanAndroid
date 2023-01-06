@@ -11,6 +11,10 @@ import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshFooterCreator
 import com.scwang.smart.refresh.layout.listener.DefaultRefreshHeaderCreator
+import com.sensorsdata.analytics.android.sdk.SAConfigOptions
+import com.sensorsdata.analytics.android.sdk.SALog
+import com.sensorsdata.analytics.android.sdk.SensorsAnalyticsAutoTrackEventType
+import com.sensorsdata.analytics.android.sdk.SensorsDataAPI
 import com.tencent.mmkv.MMKV
 import com.tencent.smtt.export.external.TbsCoreSettings
 import com.tencent.smtt.sdk.QbSdk
@@ -42,6 +46,7 @@ class App : Application() {
         netHttpConfig()
         initX5WebView()
         initOther()
+        initSensorsDataAPI()
     }
 
     private fun initX5WebView() {
@@ -108,5 +113,22 @@ class App : Application() {
                 return@DefaultRefreshFooterCreator ClassicsFooter(context).setDrawableSize(20f)
             })
         }
+    }
+
+    var serverUrl = "https://buryingpoint.gcongo.com.cn"
+
+    /**
+     * 初始化 Sensors Analytics SDK
+     */
+    private fun initSensorsDataAPI() {
+        val configOptions = SAConfigOptions(serverUrl)
+        configOptions
+            .setProjectId("1047887985661444096").autoTrackEventType =
+            SensorsAnalyticsAutoTrackEventType.APP_VIEW_SCREEN or
+                    SensorsAnalyticsAutoTrackEventType.APP_CLICK
+        configOptions.enableLog(true)
+        configOptions.enableVisualizedAutoTrack(true)
+        SensorsDataAPI.startWithConfigOptions(this, configOptions)
+        SensorsDataAPI.sharedInstance(this).trackFragmentAppViewScreen()
     }
 }
