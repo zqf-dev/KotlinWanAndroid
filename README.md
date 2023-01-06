@@ -23,4 +23,4 @@ Android使用Kotlin开发入门学习实战项目，采用WanAndroid提供的数
 
 10、WebView腾讯[xWebView](https://x5.tencent.com/tbs/technical.html#/)
 
-#### 项目部分截图
+#### app部分截图
