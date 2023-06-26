@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    //id 'kotlin-parcelize'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
 }
@@ -44,8 +45,8 @@ android {
         exclude 'META-INF/atomicfu.kotlin_module'
     }
 
-    dataBinding {
-        enabled true
+    buildFeatures {
+        dataBinding = true
     }
 }
 
@@ -109,11 +110,8 @@ dependencies {
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     //BasePopup
     implementation 'io.github.razerdp:BasePopup:3.2.0'
-    //Toast
-    implementation 'com.github.getActivity:ToastUtils:10.5'
     //mmkv
     implementation 'com.tencent:mmkv:1.2.14'
-    //埋点sdk
-    implementation files('libs/OnebuyGzAnalyticsSDK-Beta-6.5.1.aar')
-    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+    //Toast
+    implementation 'com.github.getActivity:ToastUtils:10.5'
 }
